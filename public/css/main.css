@@ -5,9 +5,12 @@ body{
     font-weight: 300;
     font-size: .7rem;
 }
+
+
 #container{
     margin-top:1rem;
 }
+
 
 .navbar{
     display: flex;
@@ -73,3 +76,36 @@ body{
     border-bottom:1px solid #EEEEEE;
 }
 
+fieldset{
+    border:1px solid #EEEEEE;
+    border-radius: .25rem;
+}
+
+legend{
+    font-size:1.2rem;
+}
+
+.margin-bottom-1rem{
+    margin-bottom:1rem;
+}
+
+.input-field{
+    width:100%;
+    margin-bottom:.7rem;
+    border:1px solid #E0E0E0;
+    border-radius: .15rem;
+}
+
+.input-field-label{
+    font-weight: 600;
+    color:#424242;
+}
+
+.btn{
+    font-size: .7rem;
+    border: none;
+    border-radius: .25rem;
+    padding: .7rem;
+    background-color: #F5F5F5;
+    color: #424242;
+}
