@@ -1,0 +1,22 @@
+{
+  "name": "webtech2",
+  "version": "0.0.0",
+  "description": "frontend application for managing cars",
+  "main": "app.js",
+  "author": {
+    "name": "Dombi Gréta"
+  },
+  "scripts": {
+    "start": "node app.js",
+    "server":"nodemon app.js"
+  },
+  "dependencies": {
+    "nodemon": "^1.18.4"
+  },
+  "devDependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "fs": "^0.0.1-security",
+    "cookie-parser": "^1.4.3"
+  }
+}

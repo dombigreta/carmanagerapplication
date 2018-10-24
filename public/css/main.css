@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
+body{
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+    font-weight: 300;
+    font-size: .7rem;
+}
+#container{
+    margin-top:1rem;
+}
+
+.navbar{
+    display: flex;
+    align-items: center;
+    background-color:#EEEEEE;
+    padding:.7rem;
+    width:70%;
+    margin: auto;
+}
+
+.navbar_btn_group{
+    width:20%;
+    display: flex;
+}
+
+.navbar_btn{
+    flex: 1;
+    font-weight: 600;
+    font-size: .7rem;
+    border: none;
+    border-radius: .25rem;
+    padding: .7rem;
+    margin-left: .5rem;
+    background-color: #F5F5F5;
+    color: #424242;
+    font-family: 'Lato', sans-serif;
+}
+
+.navbar_title{
+    font-size:1.3rem;
+}
+ 
+.table{
+    width:60%;
+    margin: auto;
+}
+
+.table_title{
+    font-size:1.4rem;
+    font-family: 'Lato', sans-serif;
+    margin-bottom:.5rem;
+}
+
+.table_header{
+    display: flex;
+    text-align: center;
+    border-bottom:2px solid #EEEEEE;
+    background-color: #F5F5F5;
+}
+
+.table_header_cell{
+    font-size:1rem !important;
+}
+
+.table_cell{
+    margin:.7rem;
+    font-size:.8rem;
+    flex:1;
+}
+.table_row{
+    display: flex;
+    text-align: center;
+    border-bottom:1px solid #EEEEEE;
+}
+
