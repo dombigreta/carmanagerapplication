@@ -3,6 +3,10 @@ const initCars = () =>{
             success:(cars) => createCarTable(cars),
             error:function(error){console.log(error)}
         });
+    $.get({url:'/manufacturerNames',
+            success:(reponse) => createManufacturersSelect(reponse),
+            error:(error) => console.log(error)
+        });    
 }
 
 const createCarTable = (items) =>{
@@ -40,4 +44,10 @@ const createCarTableRow = (items, table) =>{
         table.append(row);
     });
 
+}
+
+const createManufacturersSelect = (items) =>{
+    items.forEach(item => {
+        $('#manufacturersSelect').append($(document.createElement('option')).append(item));
+    })
 }

@@ -11,7 +11,7 @@ var manufacturers =
         {"name": "Ford",                "country": "USA",           "founded": "June 16, 1903"},
         {"name": "Tesla",               "country": "USA",           "founded": "July 1, 2003"},
         {"name": "Chevrolet",           "country": "USA",           "founded": "November 3, 1911"},
-        {"name":"Sungri Motor Plant",  "country": "True Korea",    "founded":"November 1, 1950"}
+        {"name": "Sungri Motor Plant",  "country": "True Korea",    "founded":"November 1, 1950"}
 ];
 var cars = [
     {
@@ -32,7 +32,7 @@ var cars = [
         "available":1,
         "horsepower":50
     },
-        {
+    {
         "name": "Focus",
         "consumption": "7/100km",
         "color": "blue",
@@ -40,7 +40,142 @@ var cars = [
         "available": 1,
         "year": 2013,
         "horsepower":120
-    }
+    },
+    {
+        "name": "Saxo",
+        "consumption": "4l/100km",
+        "color": "blue",
+    "manufacturer": "KIA",
+    "available": 2,
+    "year": 2001,
+    "horsepower":65
+},
+{
+"name": "Panda",
+"consumption": "6l/100km",
+"color": "Red",
+"manufacturer": "Tesla",
+"available": 1,
+"year": 2000,
+"horsepower":85
+},
+{
+"name": "Fabia",
+"consumption": "5l/100km",
+"color": "white",
+"manufacturer": "Skoda",
+"available": 15,
+"year": 2007,
+"horsepower":68
+},
+{
+"name": "Laguna II",
+"consumption": "6l/100km",
+"color": "silver",
+"manufacturer": "Sungri Motor Plant",
+"available": 1,
+"year": 2003,
+"horsepower": 96
+},
+{
+"name": "Supra",
+"consumption": "13l/100km",
+"color": "red",
+"manufacturer": "Toyota",
+"available": 8,
+"year": 1995,
+"horsepower":340
+},
+{
+"name": "Zafira",
+"consumption": "8l/100km",
+"color": "green",
+"manufacturer": "Opel",
+"available": 1,
+"year": 2002,
+"horsepower":116
+},
+{
+"name": "Ibiza",
+"consumption": "6l/100km",
+"color": "blue",
+"manufacturer": "KIA",
+"available": 100,
+"year": 2006,
+"horsepower": 120,
+},
+{
+"name": "Prelude",
+"consumption": "9l/100km",
+"color": "red",
+"manufacturer": "Ford",
+"available": 11,
+"year": 1999,
+"horsepower":150
+},
+{
+"name": "V40",
+"consumption": "5.6l/100km",
+"color": "Ocean blue",
+"manufacturer": "Volvo",
+"available": 1,
+"year": 2014,
+"horsepower":150
+},
+{
+"name": "Primera",
+"consumption": "9l/100km",
+"color": "brown",
+"manufacturer": "Toyota",
+"available": 15,
+"year": 2001,
+"horsepower":110
+},
+{
+"name": "Passat",
+"consumption": "6l/100km",
+"color": "black",
+"manufacturer": "Tesla",
+"available": 1,
+"year": 2009,
+"horsepower":140
+},
+{
+"name": "Lacetti",
+"consumption": "9l/100km",
+"color": "black",
+"manufacturer": "Chevrolet",
+"available": 5,
+"year": 2010,
+"horsepower":109
+},
+{
+"name": "911 Carrera",
+"consumption": "8.3l/100km",
+"color": "white",
+"manufacturer": "Sungri Motor Plant",
+"available": 1,
+"year": 2012,
+"horsepower":345
+},
+{
+"name": "Yaris",
+"consumption": "5l/100km",
+"color": "silver",
+"manufacturer": "Toyota",
+"available": 1,
+"year": 2007,
+"horsepower":69
+},
+{
+    "name": "P601",
+    "consumption": "8l / 100km",
+    "color": "lightblue",
+    "manufacturer": "KIA",
+    "available": 3,
+    "year": 1964,
+    "horsepower": 26
+}
     
     ];
 app.use(express.static(__dirname + '/public'));
@@ -119,7 +254,7 @@ app.post('/addManufacturers', function (req, res) {
     }
     var manufacturer ={
         "name": req.body.name,
-        "country": req.body.contry,
+        "country": req.body.country,
         "founded": req.body.founded
     };
     manufacturers.push(manufacturer);
