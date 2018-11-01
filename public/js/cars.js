@@ -1,7 +1,7 @@
 
 const initCars = () =>{
     getAllCars();
-    getManifacturersForSelect();
+    getManufacturersForSelect();
 }
 const getAllCars = () =>{
     $.get({ url:'/cars',
@@ -9,7 +9,7 @@ const getAllCars = () =>{
     error:(error) => console.log(error)});
 }
 
-const getManifacturersForSelect = () =>{
+const getManufacturersForSelect = () =>{
     $.get({url:'/manufacturerNames',
     success:(reponse) => createManufacturersSelect(reponse),
     error:(error) => console.log(error)});
