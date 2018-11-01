@@ -34,3 +34,34 @@ const createManufacturersTableRow = (items,table) =>{
         table.append(row);
     });
 }
+
+const addNewManufacturer = () => {
+    let manufacturerForm = $('#manufacturerForm');
+    let dataArray = manufacturerForm.serializeArray();
+    let dataObj = {};
+    let errorMessages = [];
+    let isValid = true;
+    
+    dataArray.forEach(data => {
+        let errorMsgContainer = $('#'+ data.name + '_error').hide();
+        if(data.value.trim() == ''){
+        isValid = false;
+        errorMessages.push(data.name);
+        return;
+        }
+        dataObj[data.name] = data.value
+    });
+
+    if(errorMessages.length > 0){
+        errorMessages.forEach(msg => {
+        let inputField =$('#' + msg)
+        let errorMsgContainer = $('#' + msg +'_error').text(`${msg} field should be filled!`).show().addClass('errorMsgContainer');
+        inputField.after(errorMsgContainer);
+        } );
+    }
+    
+    if(isValid){
+        $.post('/addManufacturers',dataObj, function(reponse){createCarTable(reponse)});
+       
+    }
+}

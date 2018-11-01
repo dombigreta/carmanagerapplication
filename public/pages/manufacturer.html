@@ -4,21 +4,24 @@
 </div>
 
 <div class="table">
-<form>
+<form id="manufacturerForm">
     <fieldset >
         <legend>Add manufacturer</legend>
         <div class="margin-bottom-1rem">
             <div>
-                <label class="input-field-label">Name</label><input type="text" class="input-field"/>
+                <label class="input-field-label">Name</label><input onchange="removeError('name_error')" id="name" name="name" type="text" class="input-field"/>
+                <div id="name_error"></div>
             </div>
             <div>
-                <label class="input-field-label">Country</label><input type="text" class="input-field"/>
+                <label class="input-field-label">Country</label><input onchange="removeError('country_error')" id="country" name="country" type="text" class="input-field"/>
+                <div id="country_error"></div>
             </div>
             <div>
-                <label class="input-field-label">Founded</label><input type="date" class="input-field"/>
+                <label class="input-field-label">Founded</label><input onchange="removeError('founded_error')" id="founded" name="founded" type="date" class="input-field"/>
+                <div id="founded_error"></div>
             </div>
         </div>
-        <button class="btn">add manufacturer</button>
+        <button onclick="addNewManufacturer()" type="button" class="btn">add manufacturer</button>
     </fieldset>
 </form>
 </div>

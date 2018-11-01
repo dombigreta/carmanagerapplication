@@ -1,15 +1,18 @@
 
 const initCars = () =>{
+    getAllCars();
+    getManifacturersForSelect();
+}
+const getAllCars = () =>{
     $.get({ url:'/cars',
-            success:(cars) => createCarTable(cars),
-            error:(error) => console.log(error)
-});
-    $.get({url:'/manufacturerNames',
-            success:(reponse) => createManufacturersSelect(reponse),
-            error:(error) => console.log(error)
-        });
+    success:(cars) => createCarTable(cars),
+    error:(error) => console.log(error)});
+}
 
-   
+const getManifacturersForSelect = () =>{
+    $.get({url:'/manufacturerNames',
+    success:(reponse) => createManufacturersSelect(reponse),
+    error:(error) => console.log(error)});
 }
 
 const createCarTable = (items) =>{
@@ -55,9 +58,7 @@ const createManufacturersSelect = (items) =>{
     })
 }
 
-
 const addNewCar = () =>{
-
     let carForm = $('#carForm');
     let dataArray = carForm.serializeArray();
     let dataObj = {};
@@ -83,12 +84,8 @@ const addNewCar = () =>{
     }
     
     if(isValid){
-        console.log(dataObj);
         $.post('/addCar',dataObj, function(reponse){createCarTable(reponse)});
        
     }
 }
 
-const removeError = (resourceKey) =>{
-    $('#' + resourceKey).hide();
-}

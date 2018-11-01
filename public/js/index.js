@@ -33,3 +33,6 @@ const loadContent = (content) =>{
     container.load(content);
 }
 
+const removeError = (resourceKey) =>{
+    $('#' + resourceKey).hide();
+}
