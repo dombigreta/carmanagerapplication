@@ -1,12 +1,15 @@
+
 const initCars = () =>{
     $.get({ url:'/cars',
             success:(cars) => createCarTable(cars),
-            error:function(error){console.log(error)}
-        });
+            error:(error) => console.log(error)
+});
     $.get({url:'/manufacturerNames',
             success:(reponse) => createManufacturersSelect(reponse),
             error:(error) => console.log(error)
-        });    
+        });
+
+   
 }
 
 const createCarTable = (items) =>{
@@ -48,6 +51,44 @@ const createCarTableRow = (items, table) =>{
 
 const createManufacturersSelect = (items) =>{
     items.forEach(item => {
-        $('#manufacturersSelect').append($(document.createElement('option')).append(item));
+        $('#manufacturer').append($(document.createElement('option')).append(item).attr('value',item));
     })
+}
+
+
+const addNewCar = () =>{
+
+    let carForm = $('#carForm');
+    let dataArray = carForm.serializeArray();
+    let dataObj = {};
+    let errorMessages = [];
+    let isValid = true;
+    
+    dataArray.forEach(data => {
+        let errorMsgContainer = $('#'+ data.name + '_error').hide();
+        if(data.value.trim() == ''){
+        isValid = false;
+        errorMessages.push(data.name);
+        return;
+        }
+        dataObj[data.name] = data.value
+    });
+
+    if(errorMessages.length > 0){
+        errorMessages.forEach(msg => {
+        let inputField =$('#' + msg)
+        let errorMsgContainer = $('#' + msg +'_error').text(`${msg} field should be filled!`).show().addClass('errorMsgContainer');
+        inputField.after(errorMsgContainer);
+        } );
+    }
+    
+    if(isValid){
+        console.log(dataObj);
+        $.post('/addCar',dataObj, function(reponse){createCarTable(reponse)});
+       
+    }
+}
+
+const removeError = (resourceKey) =>{
+    $('#' + resourceKey).hide();
 }

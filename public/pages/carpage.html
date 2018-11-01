@@ -2,34 +2,40 @@
     <div class="table_title">List of cars</div>
 </div>
 <div class="table">
-<form>
+<form id="carForm">
     <fieldset >
         <legend>Add car</legend>
         <div class="margin-bottom-1rem">
             <div>
-                <label class="input-field-label">Name</label><input type="text" class="input-field"/>
+                <label class="input-field-label">Name</label><input onchange="removeError('name_error')" id="name" name="name" type="text" class="input-field"/>
+                <div id="name_error"></div>
             </div>
             <div>
-                <label class="input-field-label">Consumption</label><input type="text" class="input-field"/>
+                <label class="input-field-label">Consumption</label><input onchange="removeError('consumption_error')" id="consumption" name="consumption" type="text" class="input-field"/>
+                <div id="consumption_error"></div>
             </div>
             <div>
-                <label class="input-field-label">Color</label><input type="text" class="input-field"/>
+                <label class="input-field-label">Color</label><input onchange="removeError('color_error')" id="color" name="color" type="text" class="input-field"/>
+                <div id="color_error"></div>
             </div>
             <div>
                 <label class="input-field-label">Manufacturer</label>
-                <select id="manufacturersSelect" class="input-field"></select>
+                <select id="manufacturer" name="manufacturer" class="input-field"></select>
             </div>
             <div>
-                <label class="input-field-label">Available</label><input type="number" class="input-field"/>
+                <label class="input-field-label">Available</label><input onchange="removeError('available_error')" id="available" name="available" type="number" class="input-field"/>
+                <div id="available_error"></div>
             </div>
             <div>
-                <label class="input-field-label">Year</label><input type="date" class="input-field"/>
+                <label class="input-field-label">Year</label><input onchange="removeError('year_error')" id="year" name="year" type="date" class="input-field"/>
+                <div id="year_error"></div>
             </div>
             <div>
-                <label class="input-field-label">Horsepower</label><input type="number" class="input-field"/>
+                <label class="input-field-label">Horsepower</label><input onchange="removeError('horsepower_error')" id="horsepower" name="horsepower" type="number" class="input-field"/>
+                <div id="horsepower_error"></div>
             </div>
         </div>
-        <button class="btn">add car</button>
+        <button id="addCarBtn" type="button" onclick="addNewCar()"  class="btn">add car</button>
     </fieldset>
 </form>
 </div>

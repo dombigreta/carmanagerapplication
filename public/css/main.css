@@ -109,3 +109,12 @@ legend{
     background-color: #F5F5F5;
     color: #424242;
 }
+
+.errorMsgContainer{
+    padding: .3rem;
+    background-color: #e57373;
+    color: #FFFFFF;
+    margin-bottom: .5rem;
+    border: 1px solid #af4448;
+    border-radius: .25rem;
+}
