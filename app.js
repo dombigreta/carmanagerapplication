@@ -231,7 +231,6 @@ app.post('/addCar', function (req, res) {
             return;
         }
     }
-    console.log(req.body);
     var carJSON = {
         "name":req.body.name,
         "consumption":req.body.consumption,
