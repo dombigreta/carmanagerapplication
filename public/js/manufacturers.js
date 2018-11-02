@@ -10,6 +10,7 @@ const getAllManufacturers = () =>{
 
 const createManufacturersTable = (manufacturers) =>{
     let manufacturerTable = $('#manufacturer_table');
+    manufacturerTable.empty();
 
     let tableHeader = $(document.createElement('div'));
     tableHeader.addClass('table_header');
@@ -45,10 +46,16 @@ const addNewManufacturer = () => {
     dataArray.forEach(data => {
         let errorMsgContainer = $('#'+ data.name + '_error').hide();
         if(data.value.trim() == ''){
-        isValid = false;
-        errorMessages.push(data.name);
-        return;
+            isValid = false;
+            errorMessages.push(data.name);
+            return;
         }
+
+        if(data.name === 'founded'){
+            let date = new Date(data.value);
+            data.value = date.toLocaleDateString('en-us', {year:'numeric', month:'long',day:'numeric'});
+        }
+
         dataObj[data.name] = data.value
     });
 
@@ -61,7 +68,7 @@ const addNewManufacturer = () => {
     }
     
     if(isValid){
-        $.post('/addManufacturers',dataObj, function(reponse){createCarTable(reponse)});
+        $.post('/addManufacturers',dataObj, function(reponse){createManufacturersTable(reponse), function(error){console.log(error)}});
        
     }
 }

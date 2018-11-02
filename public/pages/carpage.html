@@ -11,7 +11,7 @@
                 <div id="name_error"></div>
             </div>
             <div>
-                <label class="input-field-label">Consumption</label><input onchange="removeError('consumption_error')" id="consumption" name="consumption" type="text" class="input-field"/>
+                <label class="input-field-label">Consumption</label><input onchange="removeError('consumption_error')" id="consumption" name="consumption" type="number" class="input-field"/>
                 <div id="consumption_error"></div>
             </div>
             <div>
@@ -23,15 +23,15 @@
                 <select id="manufacturer" name="manufacturer" class="input-field"></select>
             </div>
             <div>
-                <label class="input-field-label">Available</label><input onchange="removeError('available_error')" id="available" name="available" type="number" class="input-field"/>
+                <label class="input-field-label">Available</label><input onchange="removeError('available_error')" min="0" id="available" name="available" type="number" class="input-field"/>
                 <div id="available_error"></div>
             </div>
             <div>
-                <label class="input-field-label">Year</label><input onchange="removeError('year_error')" id="year" name="year" type="date" class="input-field"/>
+                <label class="input-field-label">Year</label><input onchange="removeError('year_error')" min="1900" max="2018" id="year" name="year" type="number" class="input-field"/>
                 <div id="year_error"></div>
             </div>
             <div>
-                <label class="input-field-label">Horsepower</label><input onchange="removeError('horsepower_error')" id="horsepower" name="horsepower" type="number" class="input-field"/>
+                <label class="input-field-label">Horsepower</label><input onchange="removeError('horsepower_error')" min="0"  id="horsepower" name="horsepower" type="number" class="input-field"/>
                 <div id="horsepower_error"></div>
             </div>
         </div>

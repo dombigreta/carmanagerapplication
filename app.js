@@ -16,7 +16,7 @@ var manufacturers =
 var cars = [
     {
         "name": "Corolla",
-        "consumption": "7l/100km",
+        "consumption": "7l / 100km",
         "color": "gray",
         "manufacturer": "Toyota",
         "available": 1,
@@ -25,7 +25,7 @@ var cars = [
     },
     {
         "name":"Astra",
-        "consumption":"10l/100km",
+        "consumption":"10l / 100km",
         "color":"gold",
         "manufacturer":"Opel",
         "year":1996,
@@ -34,7 +34,7 @@ var cars = [
     },
     {
         "name": "Focus",
-        "consumption": "7/100km",
+        "consumption": "7 / 100km",
         "color": "blue",
         "manufacturer": "Ford",
         "available": 1,
@@ -43,7 +43,7 @@ var cars = [
     },
     {
         "name": "Saxo",
-        "consumption": "4l/100km",
+        "consumption": "4l / 100km",
         "color": "blue",
     "manufacturer": "KIA",
     "available": 2,
@@ -52,7 +52,7 @@ var cars = [
 },
 {
 "name": "Panda",
-"consumption": "6l/100km",
+"consumption": "6l / 100km",
 "color": "Red",
 "manufacturer": "Tesla",
 "available": 1,
@@ -61,7 +61,7 @@ var cars = [
 },
 {
 "name": "Fabia",
-"consumption": "5l/100km",
+"consumption": "5l / 100km",
 "color": "white",
 "manufacturer": "Skoda",
 "available": 15,
@@ -70,7 +70,7 @@ var cars = [
 },
 {
 "name": "Laguna II",
-"consumption": "6l/100km",
+"consumption": "6l / 100km",
 "color": "silver",
 "manufacturer": "Sungri Motor Plant",
 "available": 1,
@@ -79,7 +79,7 @@ var cars = [
 },
 {
 "name": "Supra",
-"consumption": "13l/100km",
+"consumption": "13l / 100km",
 "color": "red",
 "manufacturer": "Toyota",
 "available": 8,
@@ -88,7 +88,7 @@ var cars = [
 },
 {
 "name": "Zafira",
-"consumption": "8l/100km",
+"consumption": "8l / 100km",
 "color": "green",
 "manufacturer": "Opel",
 "available": 1,
@@ -97,7 +97,7 @@ var cars = [
 },
 {
 "name": "Ibiza",
-"consumption": "6l/100km",
+"consumption": "6l / 100km",
 "color": "blue",
 "manufacturer": "KIA",
 "available": 100,
@@ -106,7 +106,7 @@ var cars = [
 },
 {
 "name": "Prelude",
-"consumption": "9l/100km",
+"consumption": "9l / 100km",
 "color": "red",
 "manufacturer": "Ford",
 "available": 11,
@@ -115,7 +115,7 @@ var cars = [
 },
 {
 "name": "V40",
-"consumption": "5.6l/100km",
+"consumption": "5.6l / 100km",
 "color": "Ocean blue",
 "manufacturer": "Volvo",
 "available": 1,
@@ -124,7 +124,7 @@ var cars = [
 },
 {
 "name": "Primera",
-"consumption": "9l/100km",
+"consumption": "9l / 100km",
 "color": "brown",
 "manufacturer": "Toyota",
 "available": 15,
@@ -133,7 +133,7 @@ var cars = [
 },
 {
 "name": "Passat",
-"consumption": "6l/100km",
+"consumption": "6l / 100km",
 "color": "black",
 "manufacturer": "Tesla",
 "available": 1,
@@ -142,7 +142,7 @@ var cars = [
 },
 {
 "name": "Lacetti",
-"consumption": "9l/100km",
+"consumption": "9l / 100km",
 "color": "black",
 "manufacturer": "Chevrolet",
 "available": 5,
@@ -151,7 +151,7 @@ var cars = [
 },
 {
 "name": "911 Carrera",
-"consumption": "8.3l/100km",
+"consumption": "8.3l / 100km",
 "color": "white",
 "manufacturer": "Sungri Motor Plant",
 "available": 1,
@@ -160,7 +160,7 @@ var cars = [
 },
 {
 "name": "Yaris",
-"consumption": "5l/100km",
+"consumption": "5l / 100km",
 "color": "silver",
 "manufacturer": "Toyota",
 "available": 1,

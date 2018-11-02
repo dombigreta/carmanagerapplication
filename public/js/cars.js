@@ -17,6 +17,8 @@ const getManufacturersForSelect = () =>{
 
 const createCarTable = (items) =>{
     let carTable = $('#car_table');
+    carTable.empty();
+  
 
     let tableHeader = $(document.createElement('div'));
     tableHeader.addClass('table_header');
@@ -68,10 +70,15 @@ const addNewCar = () =>{
     dataArray.forEach(data => {
         let errorMsgContainer = $('#'+ data.name + '_error').hide();
         if(data.value.trim() == ''){
-        isValid = false;
-        errorMessages.push(data.name);
-        return;
+            isValid = false;
+            errorMessages.push(data.name);
+            return;
         }
+
+        if(data.name === 'consumption'){
+            data.value += 'l / 100km';
+        }
+
         dataObj[data.name] = data.value
     });
 
@@ -84,7 +91,7 @@ const addNewCar = () =>{
     }
     
     if(isValid){
-        $.post('/addCar',dataObj, function(reponse){createCarTable(reponse)});
+        $.post('/addCar',dataObj, function(reponse){createCarTable(reponse), function(error){console.log(error)}});
        
     }
 }
