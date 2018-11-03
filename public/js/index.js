@@ -53,7 +53,7 @@ const removeError = (resourceKey) =>{
 }
 
 const showModal = (message, messageType) =>{
-     modal.show();
+     modal.fadeIn(100);
      switch(messageType){
          case messageKeys.WARNING:  {$('#modalTitle').text('attention');
                                     $('#modalHeader').addClass('attention')};
@@ -70,5 +70,5 @@ const showModal = (message, messageType) =>{
 }
 
 const closeModal = () =>{
-    modal.hide();
+    modal.fadeOut(100);
 }
