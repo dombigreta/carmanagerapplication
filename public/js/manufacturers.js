@@ -68,7 +68,10 @@ const addNewManufacturer = () => {
     }
     
     if(isValid){
-        $.post('/addManufacturers',dataObj, function(reponse){createManufacturersTable(reponse), function(error){console.log(error)}});
-       
+        $.post({url:'/addManufacturers',
+                data:dataObj,
+                statusCode:{409:showModal('There is already a manufacturer named like that!',messageKeys.WARNING)},
+                success:(reponse) => createManufacturersTable(reponse),
+                error:(error) => console.log(error)});
     }
 }

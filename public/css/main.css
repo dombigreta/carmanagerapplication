@@ -118,3 +118,62 @@ legend{
     border: 1px solid #af4448;
     border-radius: .25rem;
 }
+
+.modal{
+    display:none;
+    position:fixed;
+    z-index:1000;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content{
+    background-color: #FFFFFF;
+    margin:10% auto;
+    width:40%;
+   
+    color:rgba(0,0,0,0.7);
+    box-shadow: 0 .2rem .4rem 0 rgba(0,0,0,0.2);
+}
+
+.modal-header{
+    font-size:1.4rem;
+    display: flex;
+    justify-content: space-between;
+   
+    padding:.4rem;
+    margin-bottom:.5rem;
+}
+
+.modal-body{
+    padding:.8rem;
+    font-size:.8rem;
+}
+
+.closeBtn{
+    cursor: pointer;
+    transition-duration: 200ms;
+}
+
+.closeBtn:hover{
+    color: rgba(0,0,0,0.3);
+}
+
+.attention{
+    background-color: #FFB74D;
+    color:rgba(0,0,0,0.8);
+}
+
+.error{
+    background-color: #558B2F;
+    color:#FFFFFF;
+}
+
+.success{
+    background-color: #BF360C;
+    color:#FFFFFF;
+}

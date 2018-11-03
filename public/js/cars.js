@@ -91,7 +91,11 @@ const addNewCar = () =>{
     }
     
     if(isValid){
-        $.post('/addCar',dataObj, function(reponse){createCarTable(reponse), function(error){console.log(error)}});
+        $.post({url:'/addCar',
+                data:dataObj,
+                statusCode:{409:function(){showModal('There is already car being named like that!',messageKeys.WARNING)}},
+                success:(reponse) => createCarTable(reponse),
+                error: (error) => console.log(error)});
        
     }
 }
