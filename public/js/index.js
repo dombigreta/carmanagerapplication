@@ -7,8 +7,8 @@ var modal;
 
 const messageKeys = {
     WARNING: 'WARNING',
-    ERROR:'ERROR',
-    SUCCESS:'SUCCESS'
+    ERROR: 'ERROR',
+    SUCCESS: 'SUCCESS'
 }
 
 Object.freeze(messageKeys);

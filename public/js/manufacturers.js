@@ -70,7 +70,7 @@ const addNewManufacturer = () => {
     if(isValid){
         $.post({url:'/addManufacturers',
                 data:dataObj,
-                statusCode:{409:showModal('There is already a manufacturer named like that!',messageKeys.WARNING)},
+                statusCode:{409:showModal('There is already a manufacturer named like that!', messageKeys.WARNING)},
                 success:(reponse) => createManufacturersTable(reponse),
                 error:(error) => console.log(error)});
     }
