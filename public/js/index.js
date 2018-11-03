@@ -36,6 +36,12 @@ $(document).ready(function(){
     mainBtn.on('click',function(){
         loadContent('../pages/mainpage.html');
     });
+
+    window.addEventListener('click', function(e){
+        if(e.target == modal[0]){
+            closeModal();
+        }
+    });
 });
 
 const loadContent = (content) =>{
