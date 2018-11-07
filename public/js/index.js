@@ -54,6 +54,10 @@ const removeError = (resourceKey) =>{
 
 const showModal = (message, messageType) =>{
      modal.fadeIn(100);
+     
+     if($('#modalHeader')[0].classList.length > 1){
+        $('#modalHeader').removeClass($('#modalHeader')[0].classList[1]);
+     }
      switch(messageType){
          case messageKeys.WARNING:  {$('#modalTitle').text('attention');
                                     $('#modalHeader').addClass('attention')};
@@ -65,7 +69,30 @@ const showModal = (message, messageType) =>{
                                     $('#modalHeader').addClass('success')};
          break;
      }
-     $('#modalBody').text(message);
+
+     $('#modalBody').empty();
+
+     if(Array.isArray(message))
+        {
+            let list = $(document.createElement('ul'));
+            message.forEach(message => {
+
+                let listItem = $(document.createElement('li'));
+
+                if(typeof message === 'object'){
+                    listItem.append(message['name']);
+                }
+                else{
+                    listItem.append(message);
+                }
+                list.append(listItem);
+            });
+            $('#modalBody').append(list);  
+        }
+        else{
+            $('#modalBody').text(message);
+        }
+     
 
 }
 

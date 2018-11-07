@@ -6,6 +6,8 @@ const getAllManufacturers = () =>{
     $.get({ url:'/manufacturers',
             success:(manufacturers) => createManufacturersTable(manufacturers),
             error:(error) => console.log(error)});
+
+        
 }
 
 const createManufacturersTable = (manufacturers) =>{
@@ -32,10 +34,18 @@ const createManufacturersTableRow = (items,table) =>{
         let country = $(document.createElement('div')).append(item.country).addClass('table_cell');
         let founded = $(document.createElement('div')).append(item.founded).addClass('table_cell');
         row.append(name,country,founded);
+        row.on('click',() => openManufacturersCars(item.name))
         table.append(row);
     });
 }
-
+const openManufacturersCars = (name) =>{
+    document.cookie=`name=${name}`
+    $.get({
+        url:'/manufacturer',
+        success:(reponse) => showModal(reponse, messageKeys.SUCCESS),
+        error:function(err){console.log(error)}
+    });
+}
 const addNewManufacturer = () => {
     let manufacturerForm = $('#manufacturerForm');
     let dataArray = manufacturerForm.serializeArray();
@@ -70,7 +80,7 @@ const addNewManufacturer = () => {
     if(isValid){
         $.post({url:'/addManufacturers',
                 data:dataObj,
-                statusCode:{409:showModal('There is already a manufacturer named like that!', messageKeys.WARNING)},
+                statusCode:{409:() => showModal('There is already a manufacturer named like that!', messageKeys.WARNING)},
                 success:(reponse) => createManufacturersTable(reponse),
                 error:(error) => console.log(error)});
     }

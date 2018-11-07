@@ -169,11 +169,11 @@ legend{
 }
 
 .error{
-    background-color: #558B2F;
+    background-color: #BF360C;
     color:#FFFFFF;
 }
 
 .success{
-    background-color: #BF360C;
+    background-color: #2E7D32;
     color:#FFFFFF;
 }
