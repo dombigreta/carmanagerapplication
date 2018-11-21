@@ -46,6 +46,7 @@ body{
 .table{
     width:60%;
     margin: auto;
+    text-align: justify;
 }
 
 .table_title{
@@ -177,3 +178,14 @@ legend{
     background-color: #2E7D32;
     color:#FFFFFF;
 }
+
+.car-img{
+    width:30%;
+    float:left;
+    height: auto;
+}
+
+.content{
+    color:#2A2A2A;
+}
+
